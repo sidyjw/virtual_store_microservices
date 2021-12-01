@@ -69,3 +69,19 @@ A escolha do **Dapper **foi feita para poder atingir uma alta performance nas qu
 * Microsoft.VisualStudio.Azure.Containers.Tools.Targets
 * [Npgsql](https://www.nuget.org/packages/Npgsql/5.0.7)
 * [Swashbuckle.AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore/)
+
+
+## Serviço gRPC Discount com PostgreSQL
+
+### Descrição
+
+Serviço [gRPC](https://grpc.io) responsável por gerenciar os cupons de desconto.
+
+Esse será um serviço que será consumido de forma interna por outros microsserviços. Por isso, utilizei o gRPC para realizar a [comunicação entre processos.](https://pt.wikipedia.org/wiki/Comunica%C3%A7%C3%A3o_entre_processos)
+
+### Dependências
+
+*[AutoMapper.Extensions.Microsoft.DependencyInjection](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/8.1.1/)
+*[Grpc.AspNetCore](https://www.nuget.org/packages/Grpc.AspNetCore/2.34.0/)
+*[Dapper](https://dapper-tutorial.net/dapper) 
+*[Npgsql](https://www.nuget.org/packages/Npgsql/5.0.7)
