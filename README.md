@@ -19,7 +19,7 @@ Loja virtual com o objetivo de solidificar o conhecimento em microsserviços, AS
 
 ### Descrição
 
-API REST responsável pelo CRUD dos produtos. Foi usado o **[Repository pattern](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application) **para realizar as operações nos dados.
+API REST responsável pelo CRUD dos produtos. Foi usado o **[Repository pattern](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)** para realizar as operações nos dados.
 
 A persistência é feita pelo **MongoDB** e é utilizado o [driver oficial](https://docs.mongodb.com/drivers/csharp/) para manipular o banco de dados.
 
@@ -36,10 +36,11 @@ A persistência é feita pelo **MongoDB** e é utilizado o [driver oficial](http
 
 ### Descrição
 
-API REST responsável pelo CRUD dos carrinhos de compra. Foi usado o **[Repository pattern](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application) **para realizar as operações nos dados.
+API REST responsável pelo CRUD dos carrinhos de compra. Foi usado o **[Repository pattern](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)** para realizar as operações nos dados.
 
 É feito um cache dos dados utilizando o **Redis**. O repository usa o [driver oficial](https://www.nuget.org/packages/Microsoft.Extensions.Caching.StackExchangeRedis/5.0.1) do Redis para realizar as manipulações dos dados.
 
+As informações de disconto são obtidas ao consumir o [Serviço gRPC Discount](#serviço-grpc-discount-com-postgresql).
 
 ### Dependências
 
@@ -58,7 +59,7 @@ API REST responsável pelo CRUD dos carrinhos de compra. Foi usado o **[Reposito
 
 API REST responsável por gerenciar os cupons de desconto. Para auxiliar na manipulação do banco PostgreSQL foi usado o [Dapper ORM](https://dapper-tutorial.net/dapper).
 
-A escolha do **Dapper **foi feita para poder atingir uma alta performance nas querys ao mesmo tempo em que exemplifica a flexibilidade da arquitetura de microsserviços por mostrar que é possível usar várias formas de armazenar os dados. 
+A escolha do **Dapper** foi feita para poder atingir uma alta performance nas querys ao mesmo tempo em que exemplifica a flexibilidade da arquitetura de microsserviços por mostrar que é possível usar várias formas de armazenar os dados. 
 
 
 ### Dependências
@@ -77,7 +78,7 @@ A escolha do **Dapper **foi feita para poder atingir uma alta performance nas qu
 
 Serviço [gRPC](https://grpc.io) responsável por gerenciar os cupons de desconto.
 
-Esse será um serviço que será consumido de forma interna por outros microsserviços. Por isso, utilizei o gRPC para realizar a [comunicação entre processos.](https://pt.wikipedia.org/wiki/Comunica%C3%A7%C3%A3o_entre_processos)
+Esse serviço será consumido pela [Api Basket](#api-basket-com-redis). Por isso, utilizei o gRPC para realizar a [comunicação entre processos.](https://pt.wikipedia.org/wiki/Comunica%C3%A7%C3%A3o_entre_processos)
 
 ### Dependências
 
