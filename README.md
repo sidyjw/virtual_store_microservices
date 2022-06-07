@@ -10,6 +10,20 @@
 
 Loja virtual com o objetivo de solidificar o conhecimento em microsserviços, ASP.NET Core, Docker, MongoDB, RabbitMQ, Redis e Ocelot API Gateway.
 
+## Instruções para executar o projeto
+
+Primeiramente, clone o repositório:
+
+```
+  git clone https://github.com/sidyjw/virtual_store_microservices.git
+```    
+
+O projeto fornece suporte ao Docker, caso deseje utilizar o docker-compose basta executar os seguintes comandos na pasta raiz do projeto:
+
+```
+  cd src
+  docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+```
 
 ## Microsserviços
 
