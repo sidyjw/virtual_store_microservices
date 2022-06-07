@@ -22,7 +22,7 @@ O projeto fornece suporte ao Docker, caso deseje utilizar o docker-compose basta
 
 ```
   cd src
-  docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+  docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
 
 ## Microsserviços
